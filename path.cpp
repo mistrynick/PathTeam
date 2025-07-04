@@ -1,7 +1,9 @@
 #include "path.hpp"
 
 
-
+DSTAR::DSTAR(uint32_t width, uint32_t height, vec2 startPoint, vec2 endPoint) {
+    // constructor
+}
 
 
 int main(int argc, char ** argv) {
