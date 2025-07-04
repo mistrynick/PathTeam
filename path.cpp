@@ -1,4 +1,14 @@
 #include "path.hpp"
+#include <cassert>
+
+bool DSTAR::find(vec2 u) {
+    int hash = u.x * height + u.y;
+    assert(hash < cells.size());
+    if (cells[hash] || u.cost < 0) {
+        return false;
+    }
+    return true;
+}
 
 
 DSTAR::DSTAR(uint32_t width, uint32_t height, vec2 startPoint, vec2 endPoint) {

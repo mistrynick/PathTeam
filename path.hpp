@@ -14,13 +14,12 @@
 struct vec2 {
     uint32_t x, y;
     std::pair<double,double> k;
-    double g, rhs;
+    double cost, rhs;
     vec2(uint32_t sx, uint32_t sy) {
         x = sx ; y = sy;
     }
 };
 
-bool find(uint32_t w, uint32_t h, vec2 u);
 
 class DSTAR {
     
@@ -31,10 +30,12 @@ class DSTAR {
         void computePath(uint32_t currentX, uint32_t currentY );
 
     private: 
+        uint32_t height, width;
         std::pair<uint32_t,uint32_t> start;
         std::pair<uint32_t,uint32_t> goal;
         vec2 calculateKey(vec2 u);
         void updateVertex(vec2 u);
         bool occupied(vec2 u);
+        bool find(vec2 u);
 };
 
