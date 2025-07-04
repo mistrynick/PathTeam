@@ -8,6 +8,10 @@
 #include <limits>
 #include <set>
 
+#define maxN 100
+
+
+
 
 struct vec2 {
     uint32_t x, y;
@@ -21,6 +25,8 @@ struct vec2 {
 class DSTAR {
     
     public:
+        bool cells[maxN];
+    
         DSTAR(uint32_t width, uint32_t height, vec2 start, vec2 goal);
         void computePath(uint32_t currentX, uint32_t currentY );
 
