@@ -1,6 +1,36 @@
 #include "path.hpp"
 #include <cassert>
 
+
+DSTAR::INITIALIZE(){
+    cellHash.clear();
+    path.clear();
+    openHash.clear();
+    while(!openList.empty()) openList.pop();
+
+    km=0;
+
+    s_start.c = sX;
+    s_start.y = sY;
+    s_goal.x  = gX;
+    s_goal.y  = gY;
+  
+    cellInfo tmp;
+    tmp.g = tmp.rhs =  0;
+    tmp.cost = C1;
+  
+    cellHash[s_goal] = tmp;
+  
+    tmp.g = tmp.rhs = heuristic(s_start,s_goal);
+    tmp.cost = C1;
+    cellHash[s_start] = tmp;
+    s_start = calculateKey(s_start);
+  
+    s_last = s_start;
+  
+}
+
+
 bool DSTAR::find(vec2 u) {
     int hash = u.x * height + u.y;
     assert(hash < cells.size());
