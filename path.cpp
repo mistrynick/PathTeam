@@ -2,7 +2,8 @@
 #include <cassert>
 
 
-DSTAR::INITIALIZE(){
+void DSTAR::INITIALIZE(){
+
     cellHash.clear();
     path.clear();
     openHash.clear();
@@ -10,7 +11,7 @@ DSTAR::INITIALIZE(){
 
     km=0;
 
-    s_start.c = sX;
+    s_start.x = sX;
     s_start.y = sY;
     s_goal.x  = gX;
     s_goal.y  = gY;
@@ -24,6 +25,7 @@ DSTAR::INITIALIZE(){
     tmp.g = tmp.rhs = heuristic(s_start,s_goal);
     tmp.cost = C1;
     cellHash[s_start] = tmp;
+
     s_start = calculateKey(s_start);
   
     s_last = s_start;
