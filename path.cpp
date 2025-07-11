@@ -241,7 +241,7 @@ int DSTAR::computePath() {
         } else if (u.g > u.rhs) {
             u.g = u.rhs;
             getUnoccupiedAdjlist(u, s);
-            for (vec2 a: s) {l
+            for (vec2 a: s) {
                 updateVertex(a);
             }
         } else {
