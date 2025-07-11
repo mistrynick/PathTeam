@@ -60,7 +60,7 @@ class App:
         self.update_plot()
     
     def randomObstacles(self):
-        n_obstacles = 500
+        n_obstacles = 50
         self.obstacles = []
         self.initial = []
         self.endPoints = []
