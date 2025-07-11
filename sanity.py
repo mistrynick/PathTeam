@@ -2,11 +2,10 @@ import subprocess
 import matplotlib.pyplot as plt
 import tkinter as tk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-import re
 import time
 import random 
 import numpy as np
-import cv2
+
 
 def dstarplan(start, end, obstacles):
     process = subprocess.Popen(
